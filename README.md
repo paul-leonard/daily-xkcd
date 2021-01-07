@@ -1,20 +1,42 @@
+# daily-xkcd
+A cool Next.js React App to bring you the latest xkcd webcomic... and any from history you'd like!
+
+## Lab Submission Pull Requests
+[Lab43: React 3](https://github.com/paul-leonard/daily-xkcd/pull/1)
+
+## Release Info
+**Author**: Paul Leonard
+**Version**: 0.9.0
+
+## Overview
+This Next.js React developed website pulls hilarious comics from the xkcd API and renders them on an easy to use website for your enjoyment.  The homepage displays the most current comic including its title.  From there, you can navigate to the About page or to any of the ten most recent xkcd comics.
+
+## Architecture
+TBD, but definitely React and Next.js
+
+## Change Log
+**0.9.0** 1-6-2021 - Initial beta release
+**1.0.0** 1-TBD-2021 - Initial release
+
+## Credits and Collaborations
+- none yet
+
+## Required Features
+- [ ] Build a multi page web app using Next.js to consume an external API.
+- [ ] The app will display most recent XKCD comic and have links to previous 10 comics.
+- [ ] Refer to example site
+- [ ] Web app should have 2 static routes
+- [ ] Home page at “/”
+- [ ] About page at “/about”
+- [ ] Web app should have dynamic routes
+- [ ] Dynamic route should display a single comic
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+***** **Below is Next.js Readme Help** *****
 
 
 
