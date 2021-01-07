@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import NavBar from './index'
+import styles from '../styles/About.module.css'
+
 
 function About() {
   return (
-    <>
+    <div className={styles.container}>
       {/* TODO: Add NavBar here */}
       {/* <NavBar /> */}
       <nav>
@@ -16,7 +17,7 @@ function About() {
       </nav>
       <h1>About</h1>
       <p>This is a feed of wonderful webcomics.</p>
-    </>
+    </div>
   )
 }
 

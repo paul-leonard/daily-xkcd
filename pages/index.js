@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React, { Component } from 'react';
 
 
-function Home() {
+function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,9 +20,9 @@ function Home() {
           XKCD Webcomic
         </h1>
 
-        <TodayTitle title="Today Title"/>
+        <TodayTitle title={props.title}/>
 
-        <TodayComic imageAddress="https://imgs.xkcd.com/comics/2020_election_map.png" imageDescription="description soon" />
+        <TodayComic imageAddress={props.img} imageDescription={props.alt} />
         
         <h2>
           Previous 10
@@ -77,6 +77,21 @@ function PreviousList(props) {
 function PreviousComic(props) {
   return <li>#{props.comicNumber}</li>
 }
+
+export async function getStaticProps() {
+  // const todays = await fetchAll();
+
+  return {
+    props: {
+      img: "https://imgs.xkcd.com/comics/2020_election_map.png",
+      alt: "There are more Trump voters in California than Texas, more Biden voters in Texas than New York, more Trump voters in New York than Ohio, more Biden voters in Ohio than Massachusetts, more Trump voters in Massachusetts than Mississippi, and more Biden voters in Mississippi than Vermont.",
+      title: "2020 Election Map",
+    },
+    revalidate: 1,
+    // TODO: why revalidate question?
+  }
+}
+
 
 export default Home;
 // export { NavBar };
