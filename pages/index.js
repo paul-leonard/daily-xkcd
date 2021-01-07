@@ -20,9 +20,9 @@ function Home() {
           XKCD Webcomic
         </h1>
 
-        <TodayTitle />
+        <TodayTitle title="Today Title"/>
 
-        <TodayComic />
+        <TodayComic imageAddress="https://imgs.xkcd.com/comics/2020_election_map.png" imageDescription="description soon" />
         
         <h2>
           Previous 10
@@ -56,12 +56,12 @@ function NavBar() {
   )
 }
 
-function TodayTitle() {
-  return <h2>Today Title</h2>
+function TodayTitle(props) {
+  return <h2>{props.title}</h2>
 }
 
-function TodayComic() {
-  return <p>pic of comic here</p>
+function TodayComic(props) {
+  return <img src={props.imageAddress} alt={props.imageDescription} />
 }
 
 function PreviousList(props) {
