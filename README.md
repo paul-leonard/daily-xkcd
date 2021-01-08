@@ -1,8 +1,13 @@
 # daily-xkcd
 A cool Next.js React App to bring you the latest xkcd webcomic... and any from history you'd like!
 
+## Deployed URL
+[Paul's Live Deployed URL](https://daily-xkcd-seven.vercel.app/)
+*Note the deployed content is still hardcoded, will connect dynamic data to xkcd API this weekend*
+
 ## Lab Submission Pull Requests
 [Lab43: React 3](https://github.com/paul-leonard/daily-xkcd/pull/1)
+[Lab44: React 4](https://github.com/paul-leonard/daily-xkcd/pull/2)
 
 ## Release Info
 **Author**: Paul Leonard
@@ -22,17 +27,20 @@ TBD, but definitely React and Next.js
 - none yet
 
 ## Required Features
+*Lab 43: React 3*
 - [ ] Build a multi page web app using Next.js to consume an external API.
 - [ ] The app will display most recent XKCD comic and have links to previous 10 comics.
 - [ ] Refer to example site
-- [ ] Web app should have 2 static routes
-- [ ] Home page at “/”
-- [ ] About page at “/about”
+- [x] Web app should have 2 static routes
+- [x] Home page at “/”
+- [x] About page at “/about”
 - [ ] Web app should have dynamic routes
 - [ ] Dynamic route should display a single comic
-
-
-
+*Lab 44: React 4*
+Refer to Deploying Your Next.js App
+- [x] Deploy your Next.js app.
+- [x] The app you built for previous lab.
+- [x] Vercel account and to link it to Github
 
 
 
