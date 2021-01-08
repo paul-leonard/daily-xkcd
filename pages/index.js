@@ -1,65 +1,97 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import React, { Component } from 'react';
 
-export default function Home() {
+
+function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Clever Entertainment</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
+        
+        <NavBar />
+        
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          XKCD Webcomic
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <TodayTitle title={props.title}/>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <TodayComic imageAddress={props.img} imageDescription={props.alt} />
+        
+        <h2>
+          Previous 10
+        </h2>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+        <PreviousList previousList={[2408,2407,2406,2405,2404,2403,2402,2401,2400,2399]} />
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+        {/* <p className={styles.description}>
+          Get started by editing
+        </p> */}
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+
       </footer>
     </div>
   )
 }
+
+function NavBar() {
+  return (
+    <nav>
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+      <Link href="/about">
+        <a>About</a>
+      </Link>
+    </nav>
+  )
+}
+
+function TodayTitle(props) {
+  return <h2>{props.title}</h2>
+}
+
+function TodayComic(props) {
+  return <img src={props.imageAddress} alt={props.imageDescription} />
+}
+
+function PreviousList(props) {
+  return (
+    <ul>
+      {props.previousList.map(previousComic => (
+        <PreviousComic comicNumber={previousComic} />
+      ))}
+    </ul>
+  )
+}
+
+function PreviousComic(props) {
+  return <li>#{props.comicNumber}</li>
+}
+
+export async function getStaticProps() {
+  // const todays = await fetchAll();
+
+  return {
+    props: {
+      img: "https://imgs.xkcd.com/comics/2020_election_map.png",
+      alt: "There are more Trump voters in California than Texas, more Biden voters in Texas than New York, more Trump voters in New York than Ohio, more Biden voters in Ohio than Massachusetts, more Trump voters in Massachusetts than Mississippi, and more Biden voters in Mississippi than Vermont.",
+      title: "2020 Election Map",
+    },
+    revalidate: 1,
+    // TODO: why revalidate question?
+  }
+}
+
+
+export default Home;
+// export { NavBar };

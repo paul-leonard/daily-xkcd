@@ -14,3 +14,22 @@ a {
 * {
   box-sizing: border-box;
 }
+
+li {
+  list-style-type: none;
+  display: inline;
+  padding: 5px;
+  font-size: 10px;
+}
+
+a {
+  padding: 5px
+}
+
+img {
+  width: 500px;
+}
+
+h1 {
+  font-size: 30px;
+}
